@@ -2,17 +2,16 @@
 
 Personal fullstack portfolio site — a public-facing website to showcase projects, writing, and contact info, plus an admin dashboard for managing content.
 
-**Status:** Planning phase. No code yet — see [`docs/`](./docs) for specs.
-
 ## Stack
 
 - **Frontend:** Next.js (App Router) + TypeScript + Tailwind CSS
 - **Backend:** Node.js + Express + TypeScript (REST API)
 - **Database:** PostgreSQL + Prisma ORM
-- **Auth:** JWT (admin only)
-- **Hosting:** Self Hosted
+- **AI Chat:** Groq API (openai/gpt-oss-20b)
+- **Auth:** JWT (admin only) + Magic Link
+- **Hosting:** Vercel (frontend) + Railway (API) + Neon (database)
 
-## Repo layout (planned)
+## Repo layout
 
 ```
 portfolio/
@@ -21,24 +20,78 @@ portfolio/
 │   └── api/        # Express backend
 ├── packages/
 │   ├── db/         # Prisma schema + migrations + client
-│   ├── shared/     # Shared types, zod schemas
-│   └── ui/         # Shared UI components (optional)
-├── docs/           # All project documentation
+│   └── shared/     # Shared types, zod schemas
+├── docs/           # Project documentation
 └── .github/        # PR/issue templates, workflows
 ```
 
 Monorepo via pnpm workspaces + Turborepo.
 
-## Where to start
-
-1. Read [`docs/00-PROCESS.md`](./docs/00-PROCESS.md) — the project methodology (documentation → design → implementation).
-2. Then [`docs/01-PRD.md`](./docs/01-PRD.md) — what we're building and why.
-3. Then [`docs/08-ROADMAP.md`](./docs/08-ROADMAP.md) — phased milestones.
-
 ## Local setup
 
-> Will be filled in once code exists. See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the contribution workflow.
+### Prerequisites
+
+- Node.js 22+
+- pnpm 9+
+- Docker (for PostgreSQL)
+
+### Steps
+
+1. Clone and install:
+
+```bash
+git clone https://github.com/nahyan0077/portfolio.git
+cd portfolio
+pnpm install
+```
+
+2. Start PostgreSQL:
+
+```bash
+docker compose up -d portfolio_db
+```
+
+3. Set up environment:
+
+```bash
+cp .env.example .env
+# Edit .env with your values
+```
+
+4. Run migrations and seed:
+
+```bash
+pnpm db:migrate
+pnpm --filter @portfolio/db db:seed
+```
+
+5. Start dev servers:
+
+```bash
+pnpm dev
+```
+
+- Frontend: http://localhost:3000
+- API: http://localhost:3001
+
+### Admin access
+
+Email: `nahyanm@gmail.com`
+Password: set in `.env` via `SEED_ADMIN_PASSWORD`
+
+Login at http://localhost:3000/admin/login
+
+## Scripts
+
+| Command           | Description             |
+| ----------------- | ----------------------- |
+| `pnpm dev`        | Start all dev servers   |
+| `pnpm build`      | Build all packages      |
+| `pnpm lint`       | Lint all packages       |
+| `pnpm typecheck`  | Type-check all packages |
+| `pnpm db:migrate` | Run Prisma migrations   |
+| `pnpm db:seed`    | Seed database           |
 
 ## License
 
-MIT (placeholder).
+MIT
