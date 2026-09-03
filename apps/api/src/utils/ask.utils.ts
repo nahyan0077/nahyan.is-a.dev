@@ -25,7 +25,9 @@ export function appendConcisenessReminderToLastUserMessage(messages: Message[]):
     i === messages.length - 1 && msg.role === 'user'
       ? {
           ...msg,
-          content: msg.content + '\n\n(Respond concisely in plain prose, under 150 words.)',
+          content:
+            msg.content +
+            '\n\n(IMPORTANT: Keep your response extremely concise, just 1 or 2 short sentences. Do not ramble. Plain text only.)',
         }
       : msg,
   )
