@@ -6,7 +6,7 @@ import BlogShell from '@/components/organisms/BlogShell'
 export const revalidate = 60
 
 export const metadata = pageMeta(
-  'blog - akkila.dev',
+  'blog - nahyan.dev',
   'Field notes from building products end to end.',
 )
 

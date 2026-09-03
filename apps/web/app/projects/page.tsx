@@ -6,7 +6,7 @@ import ProjectsShell from '@/components/organisms/ProjectsShell'
 export const revalidate = 60
 
 export const metadata = pageMeta(
-  'projects - akkila.dev',
+  'projects - nahyan.dev',
   "A full index of things I've built - products, tools, and experiments.",
 )
 

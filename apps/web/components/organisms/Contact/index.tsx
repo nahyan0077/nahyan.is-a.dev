@@ -57,18 +57,18 @@ const Contact = () => {
       <div className="grid grid-cols-[1fr_1.1fr] gap-8 max-[940px]:grid-cols-1">
         <div className="flex flex-col gap-7">
           <Link
-            href="mailto:hello@akkila.dev"
+            href="mailto:nahyanm4@gmail.com"
             className="font-[family-name:var(--font-mono)] text-[clamp(22px,2.6vw,32px)] tracking-[-0.02em] text-[var(--text-bright)] inline-block pb-1 border-b border-dashed border-[var(--border-strong)] transition-[color,border-color] duration-200 hover:text-[var(--accent)] hover:border-[var(--accent)]"
           >
-            hello@akkila.dev →
+            nahyanm4@gmail.com →
           </Link>
           <div className="flex flex-col">
             {[
-              { key: 'location', val: 'Belgrade, RS · GMT+1' },
+              { key: 'location', val: 'Bangalore, IN · GMT+5:30' },
               { key: 'status', val: 'accepting work · Q3 2026', accent: true },
               { key: 'stack', val: 'TS / Next / Postgres / LLMs' },
-              { key: 'github', val: '@akkilaa' },
-              { key: 'linkedin', val: 'in/aleksa-janjic' },
+              { key: 'github', val: '@nahyan0077' },
+              { key: 'linkedin', val: 'in/nahyan9094' },
             ].map(({ key, val, accent }) => (
               <div
                 key={key}

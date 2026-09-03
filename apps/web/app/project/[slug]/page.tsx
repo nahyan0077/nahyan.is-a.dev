@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const url = `${SITE_URL}/project/${project.slug}`
   const image = project.images?.[0]?.url ?? undefined
   return {
-    title: `${project.title} — akkila.dev`,
+    title: `${project.title} — nahyan.dev`,
     description: project.shortDescription,
     alternates: { canonical: url },
     openGraph: {

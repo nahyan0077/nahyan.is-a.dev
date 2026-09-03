@@ -147,7 +147,7 @@ const Form = ({ me, onSubmit, loading, error }: FormProps) => (
         required
         minLength={10}
         maxLength={1000}
-        placeholder="Aleksa is a thoughtful engineer who…"
+        placeholder="Nahyan is a thoughtful engineer who…"
         disabled={loading}
       />
     </Input.Field>

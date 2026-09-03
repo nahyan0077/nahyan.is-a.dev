@@ -26,9 +26,9 @@ const PostHeader = ({ post }: { post: PostDetailResponse }) => {
                 'linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent) 60%, #000))',
             }}
           >
-            a
+            n
           </span>
-          akkila
+          nahyan
         </span>
         <span className="text-[var(--text-faint)]">·</span>
         <span>

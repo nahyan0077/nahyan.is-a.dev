@@ -9,8 +9,8 @@ import AboutSocials from '@/components/organisms/AboutSocials'
 export const revalidate = 86400
 
 export const metadata = pageMeta(
-  'about — akkila.dev',
-  'Fullstack developer and AI engineer based in Belgrade. A bit about who I am, how I got here, and what I reach for.',
+  'about — nahyan.dev',
+  'Software & AI Engineer based in Bangalore. A bit about who I am, how I got here, and what I build.',
 )
 
 export default function AboutPage() {

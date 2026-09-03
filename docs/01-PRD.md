@@ -1,7 +1,7 @@
 # Product Requirements Document (PRD)
 
 **Status:** Draft v0.1
-**Owner:** akkila
+**Owner:** nahyan
 **Last updated:** 2026-04-28
 
 > A PRD answers: _what_ are we building, _who_ is it for, _why_, and _how do we know it's done_. Not how it's built that's the job of the architecture and tech-stack docs.
@@ -119,7 +119,7 @@ Detailed list with acceptance criteria lives in [`02-USER_STORIES.md`](./02-USER
 
 - **Solo build.** Time-boxed to ~6 weeks of evenings/weekends.
 - **Budget:** ≤ $0 Will try to self host everything.
-- **Domain:** will be `akkila.dev`, but in future will maybe buy `aleksajanjic.com`
+- **Domain:** will be `nahyan.dev`
 - **Content:** at launch, ≥ 5 projects and ≥ 2 blog posts.
 
 ---

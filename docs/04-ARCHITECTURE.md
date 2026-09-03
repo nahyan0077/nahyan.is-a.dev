@@ -15,7 +15,7 @@ High-level view of how the system is composed, how requests flow, and how it's d
                                │ HTTPS
                                ▼
    ┌──────────────────────────────────────────────────┐
-   │             akkila.dev                           │
+   │             nahyan.dev                           │
    │              Next.js (Self-Hosted)               │
    │  ┌──────────────┐  ┌─────────────────────────┐   │
    │  │ Public pages │  │ Admin pages (auth-gated)│   │
@@ -24,7 +24,7 @@ High-level view of how the system is composed, how requests flow, and how it's d
               │ fetch (SSR + client)  │
               ▼                       ▼
         ┌─────────────────────────────────────┐
-        │     api.akkila.dev                  │
+        │     api.nahyan.dev                  │
         │     Express + TypeScript            │
         │     (Self-Hosted)                   │
         └────┬─────────────┬──────────────────┘
@@ -143,8 +143,8 @@ CSRF: form-encoded admin requests use a double-submit token; JSON requests rely 
 | Env        | Purpose        | Web URL                      | API URL                          |
 | ---------- | -------------- | ---------------------------- | -------------------------------- |
 | local      | Dev on laptop  | `http://localhost:3000`      | `http://localhost:4000`          |
-| staging    | `main` branch  | `https://staging.akkila.dev` | `https://staging.api.akkila.dev` |
-| production | tagged release | `https://akkila.dev`         | `https://api.akkila.dev`         |
+| staging    | `main` branch  | `https://staging.nahyan.dev` | `https://staging.api.nahyan.dev` |
+| production | tagged release | `https://nahyan.dev`         | `https://api.nahyan.dev`         |
 
 Secrets per env via `.env` files or host environment variables. **Never** committed.
 

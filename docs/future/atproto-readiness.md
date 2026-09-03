@@ -5,7 +5,7 @@
 
 This doc captures the AT Protocol thinking from early planning. It exists so the seams we leave in v1 (nullable columns, reserved routes, strategy-shaped auth) are remembered later, and so when v2 picks atproto up, the homework is already done.
 
-If you're reading this cold: AT Protocol is the federated/decentralized protocol behind Bluesky and the broader "ATmosphere" ecosystem. It is identity-first — every account is a DID (`did:plc:...` or `did:web:...`) with a human-readable handle that can be a domain. Records are signed, content-addressed JSON, defined by **Lexicons** (typed schemas) and addressed via AT URIs (`at://akkila.dev/<collection>/<rkey>`).
+If you're reading this cold: AT Protocol is the federated/decentralized protocol behind Bluesky and the broader "ATmosphere" ecosystem. It is identity-first — every account is a DID (`did:plc:...` or `did:web:...`) with a human-readable handle that can be a domain. Records are signed, content-addressed JSON, defined by **Lexicons** (typed schemas) and addressed via AT URIs (`at://nahyan.dev/<collection>/<rkey>`).
 
 ---
 
@@ -13,7 +13,7 @@ If you're reading this cold: AT Protocol is the federated/decentralized protocol
 
 Two early decisions accidentally stack the deck:
 
-- **`akkila.dev` is owned.** Atproto handles can _be_ a domain via a `.well-known/atproto-did` file. Your portfolio domain, your bsky handle, and your atproto identity become one thing.
+- **`nahyan.dev` is owned.** Atproto handles can _be_ a domain via a `.well-known/atproto-did` file. Your portfolio domain, your bsky handle, and your atproto identity become one thing.
 - **Markdown for content.** Portable across Lexicons (e.g. `com.whtwnd.blog.entry`) without rewriting.
 
 Add a few cheap structural decisions in v1 and a future "I publish to my own PDS, my site is just a UI on top of records" pivot is straightforward instead of a rewrite.
@@ -26,7 +26,7 @@ These are the seams. Do them during M2 (foundations) and you pay nothing later.
 
 ### 1. Reserve the handle (~30 min)
 
-Create a Bluesky account, set the handle to `akkila.dev` by serving `/.well-known/atproto-did` (a single text file containing `did:plc:...`).
+Create a Bluesky account, set the handle to `nahyan.dev` by serving `/.well-known/atproto-did` (a single text file containing `did:plc:...`).
 
 Effect: your bsky handle, your domain, and your atproto identity are unified from day one. Add `did:plc:...` to the `sameAs` array of your `Person` JSON-LD — both search engines and atproto clients win.
 
@@ -54,7 +54,7 @@ Avoid free-form `meta JSONB` for things that have obvious atproto analogues. Pre
 - `excerpt` (string) — maps to summary fields.
 - Discrete columns over a `details JSONB` blob.
 
-When the eventual mapping to `com.whtwnd.blog.entry` (or `dev.akkila.project`) happens, it's mechanical, not archaeological.
+When the eventual mapping to `com.whtwnd.blog.entry` (or `dev.nahyan.project`) happens, it's mechanical, not archaeological.
 
 ### 4. Make recommendation auth a **strategy**, not hardcoded checks
 
@@ -117,8 +117,8 @@ In ascending ambition. Nothing here is v1 — these are options for v2 / v3.
 ### Tier 3 — Custom Lexicons + self-hosted PDS (a real project)
 
 - Define your own Lexicons:
-  - `dev.akkila.project` for portfolio entries.
-  - `dev.akkila.recommendation` for recommender records.
+  - `dev.nahyan.project` for portfolio entries.
+  - `dev.nahyan.recommendation` for recommender records.
 - Recommenders sign records with their DID; GitHub/LinkedIn become optional verification, not the trust anchor. Self-host a PDS so your repo isn't on Bluesky's infrastructure.
 - The portfolio is now itself a small atproto application — strong piece to point to in interviews.
 
@@ -142,11 +142,11 @@ In ascending ambition. Nothing here is v1 — these are options for v2 / v3.
 ## Open questions (decide later, not now)
 
 - Use Bluesky's PDS for the first iteration, or self-host a PDS from day one of Tier 2?
-- Define `dev.akkila.project` and `dev.akkila.recommendation` Lexicons myself, or wait for a community standard?
+- Define `dev.nahyan.project` and `dev.nahyan.recommendation` Lexicons myself, or wait for a community standard?
 - Migrate the recommendation feature to atproto-only when v2 lands, or keep GitHub + LinkedIn permanently as alternative identity providers?
-- Treat blog posts as `com.whtwnd.blog.entry` for compatibility, or my own `dev.akkila.post`?
+- Treat blog posts as `com.whtwnd.blog.entry` for compatibility, or my own `dev.nahyan.post`?
 - Use atproto OAuth for `/admin` login, or keep magic-link as primary?
-- Comments — Bluesky thread embed, or a separate Lexicon (`dev.akkila.comment`)?
+- Comments — Bluesky thread embed, or a separate Lexicon (`dev.nahyan.comment`)?
 
 ---
 

@@ -6,7 +6,7 @@ import RecommendationsShell from '@/components/organisms/RecommendationsShell'
 export const revalidate = 60
 
 export const metadata = pageMeta(
-  'recommendations - akkila.dev',
+  'recommendations - nahyan.dev',
   'What developers and collaborators say about working with me.',
 )
 

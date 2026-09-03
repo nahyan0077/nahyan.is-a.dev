@@ -8,7 +8,7 @@ This doc is human-readable. The machine-readable contract lives as Zod schemas i
 
 ## Conventions
 
-- **Base URL:** `https://api.akkila.dev/v1`
+- **Base URL:** `https://api.nahyan.dev/v1`
 - **Content type:** `application/json; charset=utf-8` (except multipart for image uploads, where supported)
 - **Auth:** JWT via `HttpOnly` cookie named `pf_session` (admin endpoints only)
 - **CORS:** allowlist the web origin per env
@@ -338,7 +338,7 @@ Constraints: `contentType ∈ { image/png, image/jpeg, image/webp, image/gif }`;
 The web app caches public list/detail responses with ISR. After every admin write that affects public data, the API issues:
 
 ```
-POST https://akkila.dev/api/revalidate
+POST https://nahyan.dev/api/revalidate
 {
   "secret": "<env>",
   "paths": ["/projects", "/projects/my-slug", "/blog", "/blog/my-post", "/recommendations"]

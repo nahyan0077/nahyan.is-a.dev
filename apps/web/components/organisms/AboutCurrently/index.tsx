@@ -4,18 +4,18 @@ import NowCard from '@/components/molecules/NowCard'
 const CURRENTLY = [
   {
     verb: 'BUILDING',
-    what: 'A 7B-model upgrade for the site chat',
-    detail: 'Testing whether the quality gain justifies the latency cost.',
+    what: 'AI-powered tools that ship to production',
+    detail: 'Wiring LLMs into real workflows — not just demos, but things people rely on.',
   },
   {
     verb: 'READING',
-    what: 'Designing Data-Intensive Applications',
-    detail: "For the third time. It reads differently once you've felt the pain.",
+    what: 'System Design Interview by Alex Xu',
+    detail: 'Sharpening the architecture muscle. Patterns that scale.',
   },
   {
     verb: 'LEARNING',
-    what: 'The internals of llama.cpp',
-    detail: 'Quantization, KV-cache, and what actually moves first-token latency.',
+    what: 'RAG pipelines and vector search',
+    detail: 'Building context-aware AI systems with embeddings and retrieval.',
   },
 ]
 

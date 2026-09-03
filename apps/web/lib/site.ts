@@ -9,29 +9,32 @@ export const AVAILABILITY = {
 }
 
 export const SITE_AUTHOR = {
-  name: 'Aleksa Janjic',
+  name: 'Nahyan M',
   url: SITE_URL,
-  jobTitle: 'Full-Stack Developer & AI Engineer',
-  github: 'https://github.com/akkilaa',
-  linkedin: 'https://linkedin.com/in/aleksa-janjic',
-  email: 'hello@akkila.dev',
+  jobTitle: 'Software Engineer & AI Engineer',
+  github: 'https://github.com/nahyan0077',
+  linkedin: 'https://www.linkedin.com/in/nahyan9094/',
+  email: 'nahyanm4@gmail.com',
 }
 
 export const SITE_META: Metadata = {
-  metadataBase: new URL(SITE_URL ?? 'https://akkila.dev'),
-  title: 'akkila.dev - Aleksa Janjic - Full Stack Developer & AI Engineer',
-  description: 'Full stack portfolio. Next.js, Postgres, AI engineering.',
+  metadataBase: new URL(SITE_URL ?? 'https://nahyan.dev'),
+  title: 'nahyan.dev - Nahyan M - Software Engineer & AI Engineer',
+  description:
+    'Software & AI Engineer. Building production systems at the intersection of engineering and applied AI. MERN stack, TypeScript, Node.js.',
   openGraph: {
-    title: 'akkila.dev - Aleksa Janjic - Full Stack Developer & AI Engineer',
-    description: 'Full stack portfolio. Next.js, Postgres, AI engineering.',
+    title: 'nahyan.dev - Nahyan M - Software Engineer & AI Engineer',
+    description:
+      'Software & AI Engineer. Building production systems at the intersection of engineering and applied AI.',
     url: SITE_URL,
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'akkila.dev - Aleksa Janjic - Full Stack Developer & AI Engineer',
-    description: 'Full stack portfolio. Next.js, Postgres, AI engineering.',
+    title: 'nahyan.dev - Nahyan M - Software Engineer & AI Engineer',
+    description:
+      'Software & AI Engineer. Building production systems at the intersection of engineering and applied AI.',
     images: ['/og-image.png'],
   },
   robots: { index: true, follow: true },

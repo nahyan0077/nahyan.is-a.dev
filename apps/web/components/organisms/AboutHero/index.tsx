@@ -5,15 +5,15 @@ import Blip from '@/components/atoms/Blip'
 import CornerDecorations from '@/components/atoms/CornerDecorations'
 import { AVAILABILITY } from '@/lib/site'
 
-const yearsOld = new Date().getFullYear() - 1996
+const yearsOld = new Date().getFullYear() - 2002
 
 const FACTS: { k: string; v: ReactNode }[] = [
-  { k: 'name', v: 'Aleksa Janjić' },
+  { k: 'name', v: 'Nahyan M' },
   {
     k: 'age',
     v: (
       <>
-        {yearsOld} <span className="text-[var(--accent)]">// born 1996</span>
+        {yearsOld} <span className="text-[var(--accent)]">// born 2002</span>
       </>
     ),
   },
@@ -21,11 +21,11 @@ const FACTS: { k: string; v: ReactNode }[] = [
     k: 'based in',
     v: (
       <>
-        Belgrade, RS <span className="text-[var(--accent)]">// GMT+1</span>
+        Bangalore, India <span className="text-[var(--accent)]">// GMT+5:30</span>
       </>
     ),
   },
-  { k: 'speaks', v: 'Serbian (native), English (fluent)' },
+  { k: 'speaks', v: 'Urdu (native), English (fluent)' },
   {
     k: 'status',
     v: AVAILABILITY.open ? (
@@ -55,13 +55,13 @@ const AboutHero = () => (
       </h1>
 
       <p className="font-[family-name:var(--font-mono)] text-[14px] text-[var(--text-dim)] mb-6 mt-0">
-        Aleksa Janjić <span className="text-[var(--accent)]">· @akkila</span>
+        Nahyan M <span className="text-[var(--accent)]">· @nahyan0077</span>
       </p>
 
       <p className="text-[19px] leading-[1.55] text-[var(--text)] max-w-[46ch] mb-[30px] mt-0 text-pretty">
-        <em className="text-[var(--accent)] not-italic">Fullstack developer</em> who can't rest
-        until I understand what's under the hood, whether that's a codebase, a car, or something I'm
-        building in the garage.
+        <em className="text-[var(--accent)] not-italic">Software Engineer & AI Engineer</em> — I
+        pivoted from an MSc in Physics into software, taught myself the stack, and now build
+        production systems at the intersection of engineering and applied AI.
       </p>
 
       <div className="border-t border-[var(--border)]">
@@ -88,8 +88,8 @@ const AboutHero = () => (
       <div className="relative border border-[var(--border)] rounded-2xl p-2.5 bg-[var(--surface)] shadow-[0_0_60px_-20px_var(--accent-glow)]">
         <CornerDecorations />
         <Image
-          src="https://akkila.dev/media/cd/cd17d6fbf7ea5a305ac91261f84a00096b37bc2c400a90d8fa5fa85090051b72.webp"
-          alt="Aleksa Janjić"
+          src="/profile.jpg"
+          alt="Nahyan M"
           width={360}
           height={450}
           className="w-full rounded-xl object-cover aspect-[4/5]"

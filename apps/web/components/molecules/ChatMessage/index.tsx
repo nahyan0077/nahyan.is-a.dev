@@ -8,7 +8,7 @@ export interface Message {
 }
 
 const WHO_LABELS: Record<MessageRole, string> = {
-  assistant: '› akkila-bot',
+  assistant: '› nahyan-bot',
   user: '› you',
   system: '// system',
 }
@@ -46,7 +46,7 @@ const ChatMessage = ({ message }: { message: Message }) => {
 export const TypingMessage = () => (
   <div className="text-[14px] leading-[1.55] max-w-[92%]">
     <div className="font-[family-name:var(--font-mono)] text-[11px] tracking-[0.05em] mb-1 text-[var(--accent)]">
-      › akkila-bot
+      › nahyan-bot
     </div>
     <div className="whitespace-pre-wrap text-pretty text-[var(--text)]">
       <TypingDots />

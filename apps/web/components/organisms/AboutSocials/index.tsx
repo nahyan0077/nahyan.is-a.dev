@@ -10,7 +10,7 @@ const SOCIALS = [
       </svg>
     ),
     label: 'github',
-    meta: '/akkila',
+    meta: '/nahyan0077',
     external: true,
   },
   {
@@ -21,7 +21,7 @@ const SOCIALS = [
       </svg>
     ),
     label: 'linkedin',
-    meta: '/in/akkila',
+    meta: '/in/nahyan9094',
     external: true,
   },
   {

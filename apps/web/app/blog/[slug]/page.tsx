@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const url = `${SITE_URL}/blog/${post.slug}`
   const image = post.coverImage ?? undefined
   return {
-    title: `${post.title} — akkila.dev`,
+    title: `${post.title} — nahyan.dev`,
     description: post.excerpt,
     keywords: post.tags.map((t) => t.label),
     alternates: { canonical: url },

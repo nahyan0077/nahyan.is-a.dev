@@ -6,7 +6,6 @@ import GithubIcon from '@/components/atoms/GithubIcon'
 import LinkedinIcon from '@/components/atoms/LinkedinIcon'
 import MailIcon from '@/components/atoms/MailIcon'
 import PageHeading from '@/components/organisms/PageHeading'
-import { countYearsUntilToday } from '@/utils/dateUtils'
 import { SITE_AUTHOR, AVAILABILITY } from '@/lib/site'
 
 const HeroIntro = () => (
@@ -21,23 +20,20 @@ const HeroIntro = () => (
       leadingDollar
       title={
         <>
-          hi, I&apos;m <span className="text-[var(--accent)]">Aleksa</span>
+          hi, I&apos;m <span className="text-[var(--accent)]">Nahyan</span>
         </>
       }
-      middle="Full-Stack Developer | AI Engineer | Belgrade ↔ Remote"
+      middle="Software Engineer & AI Engineer | Bangalore · Building at the edge of product and AI"
       description={
         <>
-          I build and ship{' '}
-          <em className="text-[var(--accent)] not-italic">production software end-to-end</em>, web
-          and mobile: real-time trading dashboards, React Native apps in the stores, the design
-          systems beneath them. In{' '}
+          I design and build{' '}
           <em className="text-[var(--accent)] not-italic">
-            {countYearsUntilToday('2019-02-01')} years
-          </em>{' '}
-          I&apos;ve gone from frontend to full-stack, and lately I&apos;ve been wiring{' '}
-          <em className="text-[var(--accent)] not-italic">local LLMs</em> into real product
-          surfaces. <em className="text-[var(--accent)] not-italic">akkila.dev</em>, the site
-          you&apos;re reading, is the latest.
+            production-ready web applications end-to-end
+          </em>
+          , from pixel-perfect frontends to robust backends and everything in between. I care about{' '}
+          <em className="text-[var(--accent)] not-italic">clean code</em>, great UX, and shipping
+          things that actually work. This site is the latest thing I&apos;ve built — take a look
+          around.
         </>
       }
     />
