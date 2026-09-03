@@ -20,7 +20,7 @@ COPY --from=pruner /app/out/full/ .
 COPY --from=pruner /app/tsconfig.base.json .
 RUN pnpm --filter @portfolio/db run db:generate
 
-run pnpm --filter @portfolio/api type-check
+RUN pnpm --filter @portfolio/api type-check
 
 RUN pnpm turbo build
 
