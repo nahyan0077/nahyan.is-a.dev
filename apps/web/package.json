@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--max-old-space-size=4096' next dev",
     "dev:inspect": "NODE_OPTIONS='--inspect --expose-gc --max-old-space-size=8192' next dev",
-    "build": "next build",
+    "build": "pnpm --filter @portfolio/shared build && next build",
     "start": "next start",
     "lint": "eslint"
   },
