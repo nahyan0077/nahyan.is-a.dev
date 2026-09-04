@@ -10,7 +10,7 @@ import type { Message } from '@/components/molecules/ChatMessage'
 import ChatMessage, { TypingMessage } from '@/components/molecules/ChatMessage'
 import { useEffect } from 'react'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001/v1'
+const API_URL = '/api'
 
 const SUGGESTIONS = [
   'what is your stack?',
@@ -70,7 +70,7 @@ const ChatPanel = () => {
     abortRef.current = controller
 
     try {
-      const res = await fetch(`${API_URL}/ask`, {
+      const res = await fetch(`${API_URL}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: history }),
