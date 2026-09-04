@@ -148,13 +148,17 @@ const ChatPanel = () => {
         aria-live="polite"
         aria-label="Chat messages"
       >
-        {entries.map((entry) => (
-          <ChatMessage
-            key={entry.id}
-            message={{ who: roleMap[entry.role] ?? 'assistant', body: entry.text }}
-          />
-        ))}
-        {/* Show typing indicator while waiting or while drip hasn't started yet */}
+        {entries.map((entry) => {
+          // Skip empty assistant messages during streaming (typing indicator handles this)
+          if (streaming && entry.role === 'assistant' && entry.text === '') return null
+          return (
+            <ChatMessage
+              key={entry.id}
+              message={{ who: roleMap[entry.role] ?? 'assistant', body: entry.text }}
+            />
+          )
+        })}
+        {/* Show typing indicator while waiting for first token */}
         {streaming && entries[entries.length - 1]?.text === '' && <TypingMessage />}
         {reachedLimit && (
           <div className="text-[13px] font-[family-name:var(--font-mono)] text-[var(--text-faint)] border border-dashed border-[var(--border)] rounded-[8px] px-3 py-2">
