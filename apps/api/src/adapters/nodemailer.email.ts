@@ -7,6 +7,10 @@ export class NodemailerEmailService implements IEmailService {
     port: Number(process.env.SMTP_PORT ?? 1025),
     secure: process.env.SMTP_SECURE === 'true',
     ignoreTLS: process.env.SMTP_IGNORE_TLS === 'true',
+    auth:
+      process.env.SMTP_USER && process.env.SMTP_PASS
+        ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
+        : undefined,
   })
 
   async sendMagicLink(to: string, link: string): Promise<void> {
