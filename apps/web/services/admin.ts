@@ -9,7 +9,7 @@ import type {
 } from '@portfolio/shared'
 import { Api } from '@/lib/api'
 
-const api = new Api('/v1', { credentials: 'include' })
+const api = new Api('/api/admin', { credentials: 'include' })
 
 async function expect<T>(res: Response): Promise<T> {
   if (!res.ok) {
