@@ -60,7 +60,8 @@ export async function adminReorderProjects(
 }
 
 export async function adminGetMe(): Promise<{ id: string; role: string }> {
-  return expect<{ id: string; role: string }>(await api.get('/auth/me'))
+  const res = await fetch('/api/auth/me', { credentials: 'include' })
+  return expect<{ id: string; role: string }>(res)
 }
 
 export async function adminGetPosts(): Promise<PostResponse[]> {
@@ -116,7 +117,11 @@ export async function adminDeleteRecommendation(id: string): Promise<void> {
 }
 
 export async function adminLogin(email: string, password: string): Promise<void> {
-  const res = await api.post('/auth/login', { email, password })
+  const res = await fetch('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+  })
   if (!res.ok) {
     const body = (await res.json().catch(() => ({}))) as { error?: string }
     throw new Error(body.error ?? 'Login failed')
@@ -124,7 +129,9 @@ export async function adminLogin(email: string, password: string): Promise<void>
 }
 
 export async function adminVerify(token: string): Promise<void> {
-  const res = await api.get(`/auth/verify?token=${encodeURIComponent(token)}`)
+  const res = await fetch(`/api/auth/verify?token=${encodeURIComponent(token)}`, {
+    credentials: 'include',
+  })
   if (!res.ok) {
     const body = (await res.json().catch(() => ({}))) as { error?: string }
     throw new Error(body.error ?? 'Invalid or expired login link')
@@ -132,5 +139,5 @@ export async function adminVerify(token: string): Promise<void> {
 }
 
 export async function adminLogout(): Promise<void> {
-  await api.post('/auth/logout', {})
+  await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' })
 }
