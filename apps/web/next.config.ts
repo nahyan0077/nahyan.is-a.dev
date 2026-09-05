@@ -18,6 +18,15 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: '**' },
     ],
   },
+  async rewrites() {
+    const apiBase = process.env.NEXT_PUBLIC_API_URL?.replace(/\/v1$/, '') ?? 'http://localhost:3001'
+    return [
+      {
+        source: '/v1/:path*',
+        destination: `${apiBase}/v1/:path*`,
+      },
+    ]
+  },
   turbopack: {
     rules: {
       '*.svg': {
