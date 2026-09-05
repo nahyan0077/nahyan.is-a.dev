@@ -8,7 +8,7 @@ const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001/v1').
 )
 
 export async function POST(_req: NextRequest) {
-  const body = await req.text()
+  const body = await _req.text()
 
   try {
     const upstream = await fetch(`${API_URL}/auth/login`, {
