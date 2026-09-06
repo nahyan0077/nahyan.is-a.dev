@@ -1,4 +1,4 @@
-import type { Project, ProjectWithTagsAndImages } from '../domain/project'
+import type { Project, ProjectImage, ProjectWithTagsAndImages } from '../domain/project'
 
 export interface ProjectResponse extends Omit<
   Project,
@@ -8,6 +8,7 @@ export interface ProjectResponse extends Omit<
   endedAt: string | null
   createdAt: string
   updatedAt: string
+  images?: ProjectImage[]
 }
 
 export interface ProjectDetailResponse extends Omit<
