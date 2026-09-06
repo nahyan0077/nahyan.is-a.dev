@@ -15,6 +15,7 @@ export type EditorState = {
   role: string
   startedAt: string
   endedAt: string
+  imageUrls: string
 }
 
 export function projectToEditor(p: ProjectResponse): EditorState {
@@ -29,6 +30,7 @@ export function projectToEditor(p: ProjectResponse): EditorState {
     role: p.role ?? '',
     startedAt: p.startedAt ? p.startedAt.slice(0, 10) : '',
     endedAt: p.endedAt ? p.endedAt.slice(0, 10) : '',
+    imageUrls: (p.images || []).map((img) => img.url).join(', '),
   }
 }
 
@@ -124,7 +126,19 @@ const ProjectEditor = ({
           />
         </Input.Field>
         <Input.Field>
-          <Input.Label>LIVE URL</Input.Label>
+          <div className="flex items-center justify-between mb-1.5">
+            <Input.Label className="mb-0">LIVE URL</Input.Label>
+            {editor.liveUrl && (
+              <a
+                href={editor.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs text-[var(--accent)] hover:underline"
+              >
+                Open ↗
+              </a>
+            )}
+          </div>
           <Input.Text
             type="url"
             value={editor.liveUrl}
@@ -180,6 +194,13 @@ const ProjectEditor = ({
               </button>
             </div>
           )}
+        </Input.Field>
+        <Input.Field className="col-span-2 max-[700px]:col-span-1">
+          <Input.Label>IMAGE URLS (comma separated)</Input.Label>
+          <Input.Text
+            value={editor.imageUrls}
+            onChange={(e) => onChange('imageUrls', e.target.value)}
+          />
         </Input.Field>
       </div>
 
