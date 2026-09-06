@@ -77,6 +77,10 @@ const AdminProjectsShell = () => {
         role: editor.role || null,
         startedAt: editor.startedAt ? `${editor.startedAt}T00:00:00.000Z` : null,
         endedAt: editor.endedAt ? `${editor.endedAt}T00:00:00.000Z` : null,
+        imageUrls: editor.imageUrls
+          .split(',')
+          .map((s) => s.trim())
+          .filter(Boolean),
       })
       syncProject(updated)
       flashSaved()

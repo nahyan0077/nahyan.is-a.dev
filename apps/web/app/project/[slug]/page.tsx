@@ -79,6 +79,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </Link>
 
           <ProjectHeader project={project} />
+
+          {project.images && project.images.length > 0 && (
+            <div className="flex flex-col gap-6 my-10">
+              {project.images.map((img) => (
+                <img
+                  key={img.id}
+                  src={img.url}
+                  alt={img.alt}
+                  className="rounded-xl border border-[var(--border)] w-full object-cover"
+                />
+              ))}
+            </div>
+          )}
           <MarkdownContent>{project.descriptionMd}</MarkdownContent>
 
           <PostFooter />

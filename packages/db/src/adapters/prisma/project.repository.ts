@@ -105,7 +105,7 @@ export class PrismaProjectRepository {
   }
 
   update(id: string, data: UpdateProjectInput): Promise<Project> {
-    const { tagSlugs, ...rest } = data
+    const { tagSlugs, imageUrls, ...rest } = data
     return this.db.project.update({
       where: { id },
       data: {
@@ -115,6 +115,20 @@ export class PrismaProjectRepository {
               projectTags: {
                 deleteMany: {},
                 create: tagSlugs.map((slug) => ({ tag: { connect: { slug } } })),
+              },
+            }
+          : {}),
+        ...(imageUrls
+          ? {
+              projectImages: {
+                deleteMany: {},
+                create: imageUrls.map((url, i) => ({
+                  url,
+                  alt: 'Project image',
+                  width: 1200,
+                  height: 800,
+                  displayOrder: i,
+                })),
               },
             }
           : {}),

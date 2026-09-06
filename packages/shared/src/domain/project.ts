@@ -52,6 +52,7 @@ export type CreateProjectInput = {
 }
 
 export type UpdateProjectInput = Partial<CreateProjectInput> & {
+  imageUrls?: string[]
   liveUrl?: string | null
   repoUrl?: string | null
   endedAt?: string | null

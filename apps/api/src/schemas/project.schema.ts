@@ -28,6 +28,7 @@ export const CreateProjectSchema = z.object({
 })
 
 export const UpdateProjectSchema = CreateProjectSchema.partial().extend({
+  imageUrls: z.array(z.string().url()).optional(),
   liveUrl: safeUrl.nullish(),
   repoUrl: safeUrl.nullish(),
   endedAt: z.iso.datetime().nullish(),
