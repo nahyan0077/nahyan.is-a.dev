@@ -15,7 +15,7 @@ export function createProjectsRouter(controller: ProjectsController): Router {
   // Static routes — order matters: specific before dynamic
   router.get(PROJECT_ROUTES.FEATURED, controller.getFeatured)
   router.get(PROJECT_ROUTES.ADMIN, requireAuth, controller.getAll)
-  router.get(
+  router.patch(
     PROJECT_ROUTES.REORDER,
     requireAuth,
     validate(ReorderProjectsSchema),
